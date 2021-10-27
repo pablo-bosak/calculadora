@@ -1,0 +1,38 @@
+<html>
+  <body>
+    <script>
+      //Informar um número inicial utilizando a função 'prompt'. Essa função será exibida em uma caixa de diálogo, que vai receber uma string solicitando ao usuário que digite um número.
+      var numeroInicial = prompt('Digite o primeiro número!')
+
+      // Através do prompt será solicitado o sinal da operação a ser realizada.
+      var sinal = prompt('Digite o sinal que será feita a operação!')
+
+      //Usando o laço de repetição 'while', pra dizer que enquanto não for informado um sinal válido, ele mostrará uma mensagem alertando ao usário que use apenas os sinais válidos para executar a operação.
+      while (sinal != '-' && sinal != '+' && sinal != '*' && sinal != '/') {
+        alert('Informar um sinal válido!')
+        sinal = prompt('Digite o sinal que será feita a operação!')
+      }
+
+      var numeroFinal = prompt('Digite o segundo número!')
+
+      //Uso do'parseFloat'já que vai analisar uma string e vai retornar um número em forma decimal. Diferente do 'parseInt' que retornará um número inteiro.
+      numeroInicial = parseFloat(numeroInicial)
+      numeroFinal = parseFloat(numeroFinal)
+
+      var resultadoFinal = 0
+
+      //Uso de múltiplas condicionais 'if'/'else if', que irá executar as instruções dentro de uma determinada condição e fazendo o uso de blocos '({})'.
+      if (sinal == '+') {
+        resultadoFinal = numeroInicial + numeroFinal
+      } else if (sinal == '-') {
+        resultadoFinal = numeroInicial - numeroFinal
+      } else if (sinal == '*') {
+        resultadoFinal = numeroInicial * numeroFinal
+      } else if (sinal == '/') {
+        resultadoFinal = numeroInicial / numeroFinal
+      }
+
+      alert('O resultado é igual: ' + resultadoFinal)
+    </script>
+  </body>
+</html>
